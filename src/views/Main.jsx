@@ -1,8 +1,11 @@
 import React from 'react'
+import MainPage from '../components/Main/MainPage'
 
 function Main() {
   return (
-    <div>Main</div>
+    <div>
+      <MainPage/>
+    </div>
   )
 }
 
