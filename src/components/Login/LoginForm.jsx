@@ -4,24 +4,31 @@ import { FiUsers } from 'react-icons/fi';
 import '../Login/LoginForm.css';
 import {loginUser } from '../../api/user';
 import { storageSave } from '../../utils/storage.js';
+import { useNavigate } from 'react-router';
+import { useUser } from '../../context/UserContext';
 const usernameConfig = { required: true, minLength: 2 };
 
 function LoginForm() {
-    //const [username, setUsername] = useState('');
+
+    const { register, handleSubmit, formState: { errors }} = useForm();
+    const [user, setUser] = useUser();
+
+    
     const [loading, setLoading] = useState(false);
     const [ apiError, stetApiError] = useState(null);
 
+    const navigate = useNavigate();
+
     useEffect(() => {
-        if()
+        if(user !== null){
+            navigate('profile');
+            console.log("user has changed! " + user.username);
 
-    }, [])
 
+        }
+        
+    }, [user, navigate])
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors }
-    } = useForm();
 
     const errorMessage = (() => {
         if(!errors.username){
@@ -39,14 +46,14 @@ function LoginForm() {
     
     const onSubmit = async ({ username }) => {
         setLoading(true);
-        const [error, user] = await loginUser(username);
+        const [error, userResponse] = await loginUser(username);
         if (error !== null) {
           stetApiError(error)
         }
       
-        if (user !== null) {
-            storageSave('translation-user', user)
-          //  storageSave('translation-user', user);            
+        if (userResponse !== null) {
+            storageSave('translation-user', userResponse);
+            setUser(userResponse);
         }
       
         setLoading(false);

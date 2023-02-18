@@ -1,13 +1,13 @@
 import './App.css';
 import Login from './views/Login';
-import Main from './views/Main';
 import Profile from './views/Profile';
 
 
 import {BrowserRouter as Routing, Routes, Route} from 'react-router-dom'
+import Main from './views/Main';
 
 function App() {
-  console.log( process.env.REACT_APP_API_KEY)
+  //console.log( process.env.REACT_APP_API_KEY)
 
   return (
       <Routing>
