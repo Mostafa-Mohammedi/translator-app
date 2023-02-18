@@ -1,18 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { FiUsers } from 'react-icons/fi';
 import '../Login/LoginForm.css';
-import {loginUser } from '../../api/user'
-import { useNavigate } from 'react-router';
-const usernameConfig = {
-    required: true,
-    minLength: 2
-};
+import {loginUser } from '../../api/user';
+import { storageSave } from '../../utils/storage.js';
+const usernameConfig = { required: true, minLength: 2 };
 
 function LoginForm() {
     //const [username, setUsername] = useState('');
     const [loading, setLoading] = useState(false);
     const [ apiError, stetApiError] = useState(null);
+
+    useEffect(() => {
+        if()
+
+    }, [])
 
 
     const {
@@ -34,16 +36,22 @@ function LoginForm() {
 
         }
     })();
-    const onSubmit = async ({username}) => {
+    
+    const onSubmit = async ({ username }) => {
         setLoading(true);
         const [error, user] = await loginUser(username);
- //       console.log("Error: ", error);
- //       console.log("User: ", user);
+        if (error !== null) {
+          stetApiError(error)
+        }
+      
+        if (user !== null) {
+            storageSave('translation-user', user)
+          //  storageSave('translation-user', user);            
+        }
+      
         setLoading(false);
-    };
-
-   // console.log(errors);
-   
+      };
+      
 
     return (
         <div className='login-form-container'>
@@ -65,6 +73,7 @@ function LoginForm() {
                     Continue
                 </button>
                 {loading && <p>Continue to Main page ...</p>}
+                {apiError && <p>{apiError}</p>}
             </form>
         </div>
     );

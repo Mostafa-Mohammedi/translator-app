@@ -2,9 +2,9 @@ import { createHeaders } from ".";
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
-const checkForUser = async (name) => {
+const checkForUser = async (username) => {
     try {
-        const response = await fetch(`${apiUrl}?username=${name}`);
+        const response = await fetch(`${apiUrl}?username=${username}`);
         console.log(response);
         if(!response.ok){
             throw new Error("could not complete request");
@@ -41,8 +41,8 @@ const createUser = async (username) => {
 
 }
 
-export const loginUser = async (name) => {
-    const [ checkError, user] = await checkForUser(name);
+export const loginUser = async (username) => {
+    const [ checkError, user] = await checkForUser(username);
 
     if(checkError !== null){
         return [checkError, null]
@@ -52,5 +52,5 @@ export const loginUser = async (name) => {
 
     }
 
-    return await createUser(name);
+    return await createUser(username);
 }
