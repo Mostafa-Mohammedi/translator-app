@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { TransactionAdd } from '../../api/transaction';
+import { STORAGE_KEY_USER } from '../../const/storageKeys';
 import { useUser } from '../../context/UserContext';
+import { storageSave } from '../../utils/storage';
 import MainPageForm from './MainPageForm';
 
 function MainPage() {
@@ -14,8 +16,15 @@ function MainPage() {
 
   // When the data is submitted to the API, update the transaction history for the user
   const handleDataTransfer = async (data) => {
-    const [error, result] = await TransactionAdd(user, data);
+    const [error, updateUser] = await TransactionAdd(user, data);
+    if(error !== null){
+      return
+    }
 
+    // Keep UI state and server state in sync
+    storageSave(STORAGE_KEY_USER, updateUser)
+    // update context
+    setUser(updateUser)
     if (error) {
       console.log(error);
       return;

@@ -24,3 +24,28 @@ export const TransactionAdd = async (user, transaction) => {
   }
 };
 
+export const clearHistoryTransaction = async (userId) => {
+  try {
+    const response = await fetch(`${apiUrl}/${userId}`, {
+      method: 'PATCH',
+      headers: createHeaders(),
+      body: JSON.stringify({
+        translations: []
+      }),
+    });    
+
+    if (!response.ok) {
+      throw new Error('Could not update transaction history');
+    }
+
+    const result = await response.json();
+
+    return [null, result];
+  } catch (error) {
+    return [error.message, null];
+
+    
+  }
+
+}
+
