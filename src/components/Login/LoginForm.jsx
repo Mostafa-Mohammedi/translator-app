@@ -6,6 +6,7 @@ import {loginUser } from '../../api/user';
 import { storageSave } from '../../utils/storage.js';
 import { useNavigate } from 'react-router';
 import { useUser } from '../../context/UserContext';
+import { STORAGE_KEY_USER } from '../../const/storageKeys';
 const usernameConfig = { required: true, minLength: 2 };
 
 function LoginForm() {
@@ -52,7 +53,7 @@ function LoginForm() {
         }
       
         if (userResponse !== null) {
-            storageSave('translation-user', userResponse);
+            storageSave(STORAGE_KEY_USER, userResponse);
             setUser(userResponse);
         }
       
