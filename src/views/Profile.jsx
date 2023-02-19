@@ -1,38 +1,30 @@
-import React, { useEffect } from 'react'
-import { userById } from '../api/user'
+import React from 'react'
+import Navbar from '../components/Navbar/Navbar'
 import ProfileAction from '../components/Profile/ProfileAction'
 import ProfileOrderHistory from '../components/Profile/ProfileOrderHistory'
 import ProfilePage from '../components/Profile/ProfilePage'
-import { STORAGE_KEY_USER } from '../const/storageKeys'
 import { useUser } from '../context/UserContext'
 import withAuth from '../hoc/withAuth'
-import { storageSave } from '../utils/storage'
+import {CgProfile}  from 'react-icons/cg'
+import './Profile.css'
 
+/**
+ * A functional component that displays the user's profile information, order history and actions.
+ */
 function Profile() {
-
-  const [user, setUser] = useUser();
-  useEffect(() => {
-
-    const findUser = async () => {
-      const [error, latestUser] = await userById(user.id);
-      if(error === null){
-        storageSave(STORAGE_KEY_USER, latestUser)
-        setUser(latestUser);
-      }
-    }
-   // findUser()
-     
-  }, [setUser, user.id])
+  const [user] = useUser();
 
   return (
-    <>
-      <h1>Profile</h1>
-      <ProfilePage username = {user.username} />
-      <ProfileOrderHistory histories = {user}/>
+    <div className='profile-container'>
+      <Navbar />
+      <div className='profile-main-container'>
+      <h1 className='header'>Profile</h1>
+      <p className='profile-icon'><CgProfile/></p>
+      <ProfilePage username={user.username} />
+      <ProfileOrderHistory histories={user} />
       <ProfileAction />
- 
-
-    </>
+    </div>
+    </div>
   )
 }
 

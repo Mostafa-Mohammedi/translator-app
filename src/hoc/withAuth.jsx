@@ -1,8 +1,12 @@
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import {useUser} from '../context/UserContext'
+
+/**
+* withAuth is a higher order component  that checks if a user is authenticated before rendering a component.
+* @param {React.Component} Component - The component to be rendered if the user is authenticated.
+*/
 const withAuth = Component => props => {
     const {user} =  useUser();
-    const navigate = useNavigate();
 
     if(user !==null){
         return <Component {...props}/>

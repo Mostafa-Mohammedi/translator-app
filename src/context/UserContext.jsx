@@ -5,7 +5,11 @@ import { storageRead } from "../utils/storage";
 // Context -> expsoing
 const UserContext = createContext();
 
-
+/**
+UserProvider is a React functional component that provides the UserContext to its child components and manages the user state.
+@param {Object} props - The component props.
+@param {React.ReactNode} props.children - The child components that will be wrapped by the UserProvider.
+*/
 export const useUser = () => {
     const { user, setUser } = useContext(UserContext);
   
