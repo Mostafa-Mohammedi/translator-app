@@ -8,11 +8,11 @@ import './Login.css'
 
 function Login() {
   return (
-    <div className='container'>
-      <img src="img/sirkel.png" alt="sirkel image" className="circel-image-topp"></img>
+    <main className='container'>
+      <div className="circel-image-topp"></div>
       <LoginForm />
-      <img src="img/sirkel.png" alt="sirkel image" className="circel-image-down"></img>
-    </div>
+      <div className="circel-image-down"></div>
+    </main>
 
   )
 }

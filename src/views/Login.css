@@ -1,0 +1,27 @@
+.circel-image-topp {
+  width: 800px;
+  height: 800px;
+  background-image: url('/public/img/sirkel.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  transform: translate(50%, 50%) scale(8);
+  z-index: -1;
+
+}
+
+.circel-image-down {
+  width: 800px;
+  height: 800px;
+  background-image: url('/public/img/sirkel.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 100px;
+  right: 0;
+  transform: translate(50%, 50%) scale(8);
+  z-index: -1;
+
+}
