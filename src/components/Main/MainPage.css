@@ -1,0 +1,24 @@
+.mainpage-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.main-page-image-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 30px;
+    width: 500px;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 20px;
+    margin: 100px 10px;
+}
+
+.mainpage-image-container{
+    width: 50px;
+}
+
+
