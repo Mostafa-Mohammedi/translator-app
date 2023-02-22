@@ -9,16 +9,24 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 30px;
-    width: 500px;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 350px;
     height: auto;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 20px;
     margin: 100px 10px;
+    padding: 10px;
 }
 
 .mainpage-image-container{
     width: 50px;
+}
+.break-tag  {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 

@@ -1,16 +1,17 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './Navbar.css'
+import { TbLayoutNavbar } from 'react-icons/tb';
 
 /**
- * Navbar component for creating navigationbar
+ * Navbar component for creating navigation bar
  */
 
 function Navbar() {
   return (
     <nav className='nav-container'>
       <ul>
-        <li>Navigation</li>
+        <li className='icon-navigation'><TbLayoutNavbar/></li>
       </ul>
       <ul>
         <li>

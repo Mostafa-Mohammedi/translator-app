@@ -3,7 +3,7 @@ import {useUser} from '../context/UserContext'
 
 /**
 * withAuth is a higher order component  that checks if a user is authenticated before rendering a component.
-* @param {React.Component} Component - The component to be rendered if the user is authenticated.
+* @param {Component} Component - The component to be rendered if the user is authenticated.
 */
 const withAuth = Component => props => {
     const {user} =  useUser();

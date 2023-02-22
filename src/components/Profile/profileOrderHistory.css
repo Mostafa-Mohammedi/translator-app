@@ -1,0 +1,22 @@
+.profile-order-history-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-order-history-ul-container {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+
+.profile-order-history-ul-container li {
+    margin-left: 40px;
+}

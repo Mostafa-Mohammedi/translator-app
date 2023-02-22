@@ -6,7 +6,7 @@ import React from 'react'
  * @param {string} item.sourceText - The original text that was translated
  */
 const ProfileHistoryTranslation = ({item}) => {
-  return <li>{item}</li>
+  return <li> {item}</li>
 }
 
 export default ProfileHistoryTranslation

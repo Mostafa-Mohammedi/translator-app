@@ -5,7 +5,7 @@ import ProfileOrderHistory from '../components/Profile/ProfileOrderHistory'
 import ProfilePage from '../components/Profile/ProfilePage'
 import { useUser } from '../context/UserContext'
 import withAuth from '../hoc/withAuth'
-import {CgProfile}  from 'react-icons/cg'
+import { CgProfile } from 'react-icons/cg'
 import './Profile.css'
 
 /**
@@ -13,18 +13,27 @@ import './Profile.css'
  */
 function Profile() {
   const [user] = useUser();
+  console.log(user)
 
   return (
-    <div className='profile-container'>
+    <main className='profile-container'>
       <Navbar />
-      <div className='profile-main-container'>
-      <h1 className='header'>Profile</h1>
-      <p className='profile-icon'><CgProfile/></p>
-      <ProfilePage username={user.username} />
-      <ProfileOrderHistory histories={user} />
-      <ProfileAction />
-    </div>
-    </div>
+      <section className='profile-main-container'>
+        <div className='profile-article-container'>
+          <article className='profile-icon-container'>
+          <p>Profile page</p>
+            <span className='profile-icon'><CgProfile /></span> 
+            <ProfilePage username={user.username} />
+          </article>
+          <article className='profile-log-container'>
+            <p>Display 10 last sign logs</p>
+          <ProfileOrderHistory histories={user} />
+          </article>
+
+        </div>
+        <ProfileAction />
+      </section>
+    </main>
   )
 }
 

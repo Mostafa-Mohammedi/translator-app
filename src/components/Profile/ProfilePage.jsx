@@ -1,4 +1,5 @@
 import React from 'react'
+import './profilePage.css'
 
 /**
  * Component to display the name of the user
@@ -6,9 +7,11 @@ import React from 'react'
  * @param {object} username - The username.
  */
 
-function ProfilePage({username}) {
+function ProfilePage({ username }) {
     return (
-        <div><h4>Hello, welcome back {username}</h4></div>
+        <div className='profilepage-container'>
+            <p>Hello, welcome back {username}</p>
+        </div>
     )
 }
 

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { FiUsers } from 'react-icons/fi';
-import '../Login/LoginForm.css';
 import { loginUser } from '../../api/user';
 import { storageSave } from '../../utils/storage.js';
 import { useNavigate } from 'react-router';
 import { useUser } from '../../context/UserContext';
 import { STORAGE_KEY_USER } from '../../const/storageKeys';
+import '../Login/LoginForm.css';
 
 const usernameConfig = { required: true, minLength: 2 };
 
@@ -70,7 +70,7 @@ function LoginForm() {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className='form-floating mb-3'>
             <input
-              {...register('username', usernameConfig)}
+              {...register('username', usernameConfig )}
               type="text"
               className='form-control'
               id='floatingInput'
