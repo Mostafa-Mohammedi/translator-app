@@ -1,0 +1,31 @@
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 1rem;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .icon-navigation{
+    font-size: 40px;
+
+  }
+  
+  .nav-container ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: center
+    ;
+  }
+  
+  .nav-container li {
+    margin: 0 1rem;
+  }
+  
+  .nav-container a {
+    color: #333;
+    text-decoration: none;
+  }
