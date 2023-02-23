@@ -10,12 +10,12 @@ You can enter click on the Main page to redirect to the main page where you can 
 
 you need to create .env file and enter the following 
 
-''' 
+```
 
    REACT_APP_API_KEY: your API key for he hostet website
    REACT_APP_API_URL: your hostet translation API 
 
-''' 
+```  
 
 
 
