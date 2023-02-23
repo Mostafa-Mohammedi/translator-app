@@ -57,7 +57,7 @@ const ProfileAction = () => {
 
   return (
     <div className='profile-action-container'>
-      <Link className='profile-action-link' to={"/main"}> Main Page</Link>
+      <Link className='profile-action-link' to={"/main"}> Translation</Link>
         <button className='profile-action-button-history' onClick={handleClearHistoryClick}> clear History</button>
         <button className='profile-action-button-log-out' onClick={handleLogoutClick}> log out</button>
       </div>

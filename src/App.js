@@ -1,6 +1,6 @@
-import Login from './views/Login';
+import Startup from './views/Startup';
 import Profile from './views/Profile';
-import Main from './views/Main';
+import TranslationPage from './views/TranslationPage';
 import {BrowserRouter as Routing, Routes, Route} from 'react-router-dom'
 
 function App() {
@@ -8,8 +8,8 @@ function App() {
       <Routing>
         <div className='App'>
         <Routes>
-          <Route exact path='/' element={<Login/>}/>
-          <Route path='/main' element={<Main/>}/>
+          <Route exact path='/' element={<Startup/>}/>
+          <Route path='/main' element={<TranslationPage/>}/>
           <Route path='/profile' element={<Profile/>}/>
         </Routes>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginForm from '../components/Login/LoginForm';
-import './Login.css'
+import './Startup.css'
 
 /**
  * Login component to display the login inside the application

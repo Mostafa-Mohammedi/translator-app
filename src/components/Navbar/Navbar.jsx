@@ -15,7 +15,7 @@ function Navbar() {
       </ul>
       <ul>
         <li>
-          <NavLink to="/main">Main Page</NavLink>
+          <NavLink to="/main">Translation Page</NavLink>
         </li>
         <li>
           <NavLink to="/profile">Profile</NavLink>

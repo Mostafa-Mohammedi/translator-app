@@ -1,7 +1,7 @@
 import React from 'react'
-import MainPage from '../components/Main/MainPage'
+import MainPage from '../components/TranslationPage/MainPage'
 import Navbar from '../components/Navbar/Navbar'
-import './Main.css'
+import './TranslationPage.css'
 /**
  * Main component is the main page for registering translation and display the hand sign
 */
