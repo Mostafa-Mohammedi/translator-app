@@ -8,7 +8,7 @@ You can enter click on the Main page to redirect to the main page where you can 
 
 ## Important
 
-you need to create .env file and enter the following 
+you need to create .env file outside the src and enter the following 
 
 ```
 
@@ -17,13 +17,24 @@ you need to create .env file and enter the following
 
 ```  
 
+her are mine environment key and API
+
+```
+REACT_APP_API_KEY=5DD12A13-5FF9-4E5D-B210-16487637168D
+REACT_APP_API_URL=https://hurricane-laser-harbor.glitch.me/translations
+
+```
+
 
 
 
 
 In the project directory, you can run:
 
-### `npm start`
+```
+ npm start
+```
+
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
