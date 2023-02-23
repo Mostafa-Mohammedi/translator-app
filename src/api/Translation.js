@@ -56,8 +56,6 @@ export const TranslationClearHistory = async (userId) => {
     return [null, result];
   } catch (error) {
     return [error.message, null];
-
-    
   }
 
 }
